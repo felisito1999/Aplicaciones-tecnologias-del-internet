@@ -1,0 +1,12 @@
+C:\Users\felixperez\source\repos\BikeDataLibrary\bin\Debug\BikeDataLibrary.dll.config
+C:\Users\felixperez\source\repos\BikeDataLibrary\bin\Debug\BikeDataLibrary.dll
+C:\Users\felixperez\source\repos\BikeDataLibrary\bin\Debug\BikeDataLibrary.pdb
+C:\Users\felixperez\source\repos\BikeDataLibrary\bin\Debug\EntityFramework.dll
+C:\Users\felixperez\source\repos\BikeDataLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\felixperez\source\repos\BikeDataLibrary\bin\Debug\EntityFramework.xml
+C:\Users\felixperez\source\repos\BikeDataLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\felixperez\source\repos\BikeDataLibrary\obj\Debug\BikeStoresDataLibrary.csprojAssemblyReference.cache
+C:\Users\felixperez\source\repos\BikeDataLibrary\obj\Debug\BikeStoresDataLibrary.csproj.CoreCompileInputs.cache
+C:\Users\felixperez\source\repos\BikeDataLibrary\obj\Debug\BikeStoresDataLibrary.csproj.CopyComplete
+C:\Users\felixperez\source\repos\BikeDataLibrary\obj\Debug\BikeDataLibrary.dll
+C:\Users\felixperez\source\repos\BikeDataLibrary\obj\Debug\BikeDataLibrary.pdb
