@@ -22,3 +22,37 @@ select,
 textarea {
     max-width: 280px;
 }
+
+#header-title {
+    text-align: center;
+    color: black; 
+    font-weight: bold;
+}
+body{
+    background-color: black;
+}
+.body-content {
+    background-color: #3F729B;
+    border-radius: 10px;
+}
+.navbar {
+    background-color: #1C2331;
+    border: none;
+}
+.navbar-nav a{ 
+    color: white;
+}
+#navbar a{
+    color: white;
+}
+.navbar-brand a{
+    color: black; 
+}
+#add-product-button {
+    color: white;
+    background-color: #1C2331;
+}
+.btn-add {
+    display: flex;
+    align-content: space-around;
+}

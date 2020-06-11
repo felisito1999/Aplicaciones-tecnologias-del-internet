@@ -10,3 +10,15 @@ C:\Users\felixperez\source\repos\BikeDataLibrary\obj\Debug\BikeStoresDataLibrary
 C:\Users\felixperez\source\repos\BikeDataLibrary\obj\Debug\BikeStoresDataLibrary.csproj.CopyComplete
 C:\Users\felixperez\source\repos\BikeDataLibrary\obj\Debug\BikeDataLibrary.dll
 C:\Users\felixperez\source\repos\BikeDataLibrary\obj\Debug\BikeDataLibrary.pdb
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeDataLibrary\bin\Debug\BikeDataLibrary.dll.config
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeDataLibrary\bin\Debug\BikeDataLibrary.dll
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeDataLibrary\bin\Debug\BikeDataLibrary.pdb
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeDataLibrary\bin\Debug\EntityFramework.dll
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeDataLibrary\bin\Debug\EntityFramework.SqlServer.dll
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeDataLibrary\bin\Debug\EntityFramework.xml
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeDataLibrary\bin\Debug\EntityFramework.SqlServer.xml
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeDataLibrary\obj\Debug\BikeStoresDataLibrary.csprojAssemblyReference.cache
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeDataLibrary\obj\Debug\BikeStoresDataLibrary.csproj.CoreCompileInputs.cache
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeDataLibrary\obj\Debug\BikeStoresDataLibrary.csproj.CopyComplete
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeDataLibrary\obj\Debug\BikeDataLibrary.dll
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeDataLibrary\obj\Debug\BikeDataLibrary.pdb

@@ -12,7 +12,7 @@ namespace BikeDataLibrary.Services
     {
         T1 ConvertModelToViewModel(T model);
         T ConvertViewModelToModel(T1 viewModel);
-        IEnumerable<T1> ConvertModelListToViewModelCollection(IEnumerable<T> modelCollection);
-        IEnumerable<T> ConvertViewModelToModelCollection(IEnumerable<T1> viewModelCollection);
+        IEnumerable<T1> ConvertModelCollectionToViewModelCollection(IEnumerable<T> modelCollection);
+        IEnumerable<T> ConvertViewModelCollectionToModelCollection(IEnumerable<T1> viewModelCollection);
     }
 }
