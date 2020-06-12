@@ -8,10 +8,10 @@
         <h2 id="header-title">Products list</h2>
     </div>
 
-<div>
-    @Html.ActionLink("Add product", "AddProduct", "", new { @class = "btn btn-primary", id = "add-product-button"})
+<div class="flex-container">
+    @Html.ActionLink("Add product", "AddProduct", "", new { @class = "btn btn-primary btn-block btn-lg btn-responsive", id = "add-product-button"})
 </div>
-<table class="table table-dark">
+<table class="table table-responsive table-hover">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ProductName)
@@ -28,7 +28,9 @@
         <th>
             @Html.DisplayNameFor(model => model.ListPrice)
         </th>
-        <th></th>
+        <th>
+            Actions
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -49,9 +51,8 @@
             @Html.DisplayFor(modelItem => item.ListPrice)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ProductId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ProductId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ProductId })
+            @Html.ActionLink("Edit", "UpdateProduct", new { id=item.ProductId }, new { @class = "btn btn-responsive btn-block", id = "edit-product-btn" }) 
+            @Html.ActionLink("Delete", "DeleteProduct", new { id=item.ProductId }, new { @class = "btn btn-responsive btn-block", id = "delete-product-btn" })
         </td>
     </tr>
 }

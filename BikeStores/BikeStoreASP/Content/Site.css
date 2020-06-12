@@ -25,8 +25,15 @@ textarea {
 
 #header-title {
     text-align: center;
-    color: black; 
+    color: white; 
     font-weight: bold;
+}
+.page-header {
+    background-color: #1C2331;
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
 }
 body{
     background-color: black;
@@ -52,7 +59,43 @@ body{
     color: white;
     background-color: #1C2331;
 }
-.btn-add {
+#add-product-button:hover {
+    border-color: white;
+    background-color: #3a4863;
+}
+#edit-product-btn {
+    color: white;
+    background-color: #1C2331;
+}
+#edit-product-btn:hover {
+    border-color: white;
+    background-color:#3a4863; 
+}
+#delete-product-btn {
+    color: white;
+    background-color: #1C2331;
+}
+#delete-product-btn:hover {
+    border-color: white;
+    background-color: #3a4863;
+}
+.flex-container {
     display: flex;
-    align-content: space-around;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+.table{
+    color: white;
+    font-family: 'Malgun Gothic';
+}
+.table tr:hover {
+    color: black;
+    font-weight: bolder;
+    background-color: rgba(245, 245, 245, 0.9);
+}
+.table th{
+    font-weight: bolder;
+    font-size: 18px;
 }
