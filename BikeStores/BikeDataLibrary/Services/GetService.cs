@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BikeDataLibrary.Services;
 
 namespace BikeDataLibrary.Services
 {
@@ -23,6 +24,10 @@ namespace BikeDataLibrary.Services
         public static CategoryDataService GetCategoryDataService()
         {
             return new CategoryDataService();
+        }
+        public static ProductModelServiceModelConverter GetProductModelServiceModelConverter()
+        {
+            return new ProductModelServiceModelConverter(); 
         }
     }
 }

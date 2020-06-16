@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStoresDataLibrary", "..\BikeDataLibrary\BikeStoresDataLibrary.csproj", "{4E2ECF27-6DD7-45B5-BF4A-C7F1E7DA8CE5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStoresForms", "..\BikeStoresForms\BikeStoresForms.csproj", "{A4D727B6-179A-429F-BA9C-996863CCDAEA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{52561885-6BF5-47A2-8BAC-C959C2A911BD} = {52561885-6BF5-47A2-8BAC-C959C2A911BD}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStoresService", "..\BikeStoresService\BikeStoresService.csproj", "{52561885-6BF5-47A2-8BAC-C959C2A911BD}"
 EndProject

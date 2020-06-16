@@ -6,6 +6,7 @@ using System.Web.Services;
 using BikeDataLibrary.BikeStoresData;
 using BikeDataLibrary.Services;
 using BikeDataLibrary.ViewModels;
+using BikeDataLibrary.ServiceModels;
 
 namespace BikeStoresService
 {
@@ -21,9 +22,37 @@ namespace BikeStoresService
     public class BikeStoresWebService : System.Web.Services.WebService
     {
         [WebMethod]
-        public string HelloWorld()
+        public List<ServiceProduct> GetAllServiceProducts()
         {
-            return "Hello World";
+            var productModel = BikeDataLibrary.Services.GetService.GetProductService().GetAll().ToList();
+            var serviceProduct = BikeDataLibrary.Services.GetService.GetProductModelServiceModelConverter().ConvertModelCollectionToServiceModelCollection(productModel);
+
+            return serviceProduct; 
+        }
+        [WebMethod]
+        public ServiceProduct GetById(int id)
+        {
+            var productModel = BikeDataLibrary.Services.GetService.GetProductService().GetById(id);
+            var serviceProduct = BikeDataLibrary.Services.GetService.GetProductModelServiceModelConverter().ConvertModelToServiceModel(productModel);
+
+            return serviceProduct; 
+        }
+        [WebMethod]
+        public void Insert(ServiceProduct serviceProduct)
+        {
+            var productModel = BikeDataLibrary.Services.GetService.GetProductModelServiceModelConverter().ConvertServiceModelToModel(serviceProduct);
+            BikeDataLibrary.Services.GetService.GetProductService().Insert(productModel);
+        }
+        [WebMethod]
+        public void Update(ServiceProduct serviceProduct)
+        {
+            var productModel = BikeDataLibrary.Services.GetService.GetProductModelServiceModelConverter().ConvertServiceModelToModel(serviceProduct);
+            BikeDataLibrary.Services.GetService.GetProductService().Update(productModel);
+        }
+        [WebMethod]
+        public void Delete(int id)
+        {
+            BikeDataLibrary.Services.GetService.GetProductService().Delete(id);
         }
         //[WebMethod]
         //public List<ProductViewModel> GetAllProducts()

@@ -12,8 +12,8 @@ namespace BikeDataLibrary.Services.ServicesContracts
         where T : class
         where T1 : class
     {
-        T ConvertModelToServiceProductModel(T1 model);
-        T1 ConvertProductModelToServiceProduct(T serviceModel);
+        T ConvertModelToServiceModel(T1 model);
+        T1 ConvertServiceModelToModel(T serviceModel);
         List<T> ConvertModelCollectionToServiceModelCollection(List<T1> modelCollection);
         List<T1> ConvertServiceModelCollecitonToModelCollection(List<T> serviceModelCollection);
     }

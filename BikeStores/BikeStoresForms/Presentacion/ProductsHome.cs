@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BikeStoresForms.Services;
 
 namespace BikeStoresForms.Presentacion
 {
@@ -19,7 +20,9 @@ namespace BikeStoresForms.Presentacion
 
         private void ProductsHome_Load(object sender, EventArgs e)
         {
+            var products = WebServiceFactory.GetBikeStoresWebService().GetAllServiceProducts();
 
+            dtgProductos.DataSource = products; 
         }
     }
 }
