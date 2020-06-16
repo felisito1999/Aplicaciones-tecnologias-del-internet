@@ -79,6 +79,14 @@ body{
     border-color: white;
     background-color: #3a4863;
 }
+.btn-action {
+    color: white;
+    background-color: #1C2331;
+}
+.btn-action:hover {
+    border-color: white;
+    background-color: #3a4863;
+}
 .flex-container {
     display: flex;
     flex-direction: row;
@@ -86,11 +94,17 @@ body{
     align-items: center;
     padding: 5px;
 }
-.table{
-    color: white;
-    font-family: 'Malgun Gothic';
+#all-products-table {
+    color: black;
+    font-family: 'malgun gothic';
+    background-color: #3F729B;
 }
-.table tr:hover {
+/*.table.datatable{
+    color: black;
+    font-family: 'malgun gothic';
+    background-color: #3F729B;
+}*/
+/*.table tr:hover {
     color: black;
     font-weight: bolder;
     background-color: rgba(245, 245, 245, 0.9);
@@ -98,4 +112,8 @@ body{
 .table th{
     font-weight: bolder;
     font-size: 18px;
+}*/
+#navbar-logo img{
+    height: 50px;
+    width: 50px;
 }

@@ -42,7 +42,11 @@ namespace BikeDataLibrary.Services
 
                 if (originalProduct != null)
                 {
-                    originalProduct = updatedProduct;
+                    originalProduct.product_name = updatedProduct.product_name;
+                    originalProduct.brand_id = updatedProduct.brand_id;
+                    originalProduct.category_id = updatedProduct.category_id;
+                    originalProduct.model_year = updatedProduct.model_year;
+                    originalProduct.list_price = updatedProduct.list_price;
                     context.SaveChanges();
                 }
             }

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BikeDataLibrary.BikeStoresData;
 using BikeDataLibrary.Services;
 using BikeDataLibrary.ViewModels;
+using Microsoft.SqlServer.Server;
 
 namespace BikeStoreASP.Controllers
 {
@@ -55,7 +57,7 @@ namespace BikeStoreASP.Controllers
             }
             else
             {
-                return View("AllProducts");
+                return RedirectToAction("AllProducts");
             }
         }
         [HttpPost]
@@ -68,7 +70,7 @@ namespace BikeStoreASP.Controllers
                     var modifiedProduct = GetService.GetProductoModelConverterService().ConvertViewModelToModel(productoViewModel);
                     GetService.GetProductService().Update(modifiedProduct);
 
-                    return View("AllProducts");
+                    return RedirectToAction("AllProducts");
                 }
                 catch (Exception)
                 {
@@ -78,6 +80,41 @@ namespace BikeStoreASP.Controllers
             else
             {
                 return View(); 
+            }
+        }
+        public ActionResult DeleteProduct(int id)
+        {
+            var product = GetService.GetProductService().GetById(id);
+            var productViewModel = GetService.GetProductoModelConverterService().ConvertModelToViewModel(product);
+
+            return View(productViewModel);
+        }
+        [HttpPost]
+        public ActionResult DeleteProduct(int id, string confirmationButton)
+        {
+            if(ModelState.IsValid)
+            {
+                try
+                {
+                    var product = GetService.GetProductService().GetById(id);
+
+                    if(product == null)
+                    {
+                        return View(); 
+                    }
+
+                    GetService.GetProductService().Delete(id);
+
+                    return RedirectToAction("AllProducts");
+                }
+                catch (Exception)
+                {
+                    return View(); 
+                }
+            }
+            else
+            {
+                return View();
             }
         }
     }

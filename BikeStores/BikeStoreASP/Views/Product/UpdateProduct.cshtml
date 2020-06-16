@@ -1,19 +1,22 @@
 ﻿@model BikeDataLibrary.ViewModels.ProductViewModel
 @using BikeDataLibrary.Services
+
 @{
     ViewBag.Title = "UpdateProduct";
 }
 
-    <div class="page-header">
-        <h2>Product editing</h2>
-    </div>
-
+<div class="page-header">
+    <h2 id="header-title">Product editing</h2>
+</div>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ProductId)
+
         <div class="form-group">
             @Html.LabelFor(model => model.ProductName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -56,15 +59,11 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Edit product" class="btn btn-primary btn-action" />  |  @Html.ActionLink("Cancel", "AllProducts", "", new { @class = "btn btn-default" })
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
