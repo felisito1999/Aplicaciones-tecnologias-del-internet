@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStoresDataLibrary", "..
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStoresForms", "..\BikeStoresForms\BikeStoresForms.csproj", "{A4D727B6-179A-429F-BA9C-996863CCDAEA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStoresService", "..\BikeStoresService\BikeStoresService.csproj", "{52561885-6BF5-47A2-8BAC-C959C2A911BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A4D727B6-179A-429F-BA9C-996863CCDAEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4D727B6-179A-429F-BA9C-996863CCDAEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4D727B6-179A-429F-BA9C-996863CCDAEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52561885-6BF5-47A2-8BAC-C959C2A911BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52561885-6BF5-47A2-8BAC-C959C2A911BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52561885-6BF5-47A2-8BAC-C959C2A911BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52561885-6BF5-47A2-8BAC-C959C2A911BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

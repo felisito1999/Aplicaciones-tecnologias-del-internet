@@ -93,12 +93,16 @@
       <DependentUpon>BikeStoresModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceModels\ServiceBrand.cs" />
+    <Compile Include="ServiceModels\ServiceCategory.cs" />
+    <Compile Include="ServiceModels\ServiceProduct.cs" />
     <Compile Include="Services\BrandDataService.cs" />
     <Compile Include="Services\CategoryDataService.cs" />
     <Compile Include="Services\GetService.cs" />
-    <Compile Include="Services\IDataService.cs" />
-    <Compile Include="Services\IModelViewModelConverter.cs" />
+    <Compile Include="Services\ServicesContracts\IDataService.cs" />
+    <Compile Include="Services\ServicesContracts\IModelViewModelConverter.cs" />
     <Compile Include="Services\ProductModelViewModelConverterService.cs" />
+    <Compile Include="Services\ServicesContracts\IServiceModelConverter.cs" />
     <Compile Include="Services\ProductsDataService.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
   </ItemGroup>

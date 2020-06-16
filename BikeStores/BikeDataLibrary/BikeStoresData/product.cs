@@ -27,7 +27,6 @@ namespace BikeDataLibrary.BikeStoresData
         public int category_id { get; set; }
         public short model_year { get; set; }
         public decimal list_price { get; set; }
-    
         public virtual brand brand { get; set; }
         public virtual category category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
