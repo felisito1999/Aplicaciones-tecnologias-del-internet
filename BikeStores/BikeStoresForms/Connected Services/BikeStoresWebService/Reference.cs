@@ -33,7 +33,13 @@ namespace BikeStoresForms.BikeStoresWebService {
         
         private int BrandIdField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BrandNameField;
+        
         private int CategoryIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CategoryNameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -110,7 +116,20 @@ namespace BikeStoresForms.BikeStoresWebService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string BrandName {
+            get {
+                return this.BrandNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BrandNameField, value) != true)) {
+                    this.BrandNameField = value;
+                    this.RaisePropertyChanged("BrandName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
         public int CategoryId {
             get {
                 return this.CategoryIdField;
@@ -119,6 +138,139 @@ namespace BikeStoresForms.BikeStoresWebService {
                 if ((this.CategoryIdField.Equals(value) != true)) {
                     this.CategoryIdField = value;
                     this.RaisePropertyChanged("CategoryId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string CategoryName {
+            get {
+                return this.CategoryNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoryNameField, value) != true)) {
+                    this.CategoryNameField = value;
+                    this.RaisePropertyChanged("CategoryName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceBrand", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class ServiceBrand : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int BrandIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BrandNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int BrandId {
+            get {
+                return this.BrandIdField;
+            }
+            set {
+                if ((this.BrandIdField.Equals(value) != true)) {
+                    this.BrandIdField = value;
+                    this.RaisePropertyChanged("BrandId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string BrandName {
+            get {
+                return this.BrandNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BrandNameField, value) != true)) {
+                    this.BrandNameField = value;
+                    this.RaisePropertyChanged("BrandName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCategory", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class ServiceCategory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int CategoryIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CategoryNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int CategoryId {
+            get {
+                return this.CategoryIdField;
+            }
+            set {
+                if ((this.CategoryIdField.Equals(value) != true)) {
+                    this.CategoryIdField = value;
+                    this.RaisePropertyChanged("CategoryId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string CategoryName {
+            get {
+                return this.CategoryNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoryNameField, value) != true)) {
+                    this.CategoryNameField = value;
+                    this.RaisePropertyChanged("CategoryName");
                 }
             }
         }
@@ -170,6 +322,34 @@ namespace BikeStoresForms.BikeStoresWebService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Delete", ReplyAction="*")]
         System.Threading.Tasks.Task DeleteAsync(int id);
+        
+        // CODEGEN: Generating message contract since element name GetAllServiceBrandsResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllServiceBrands", ReplyAction="*")]
+        BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsResponse GetAllServiceBrands(BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllServiceBrands", ReplyAction="*")]
+        System.Threading.Tasks.Task<BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsResponse> GetAllServiceBrandsAsync(BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetServiceBrandByIdResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetServiceBrandById", ReplyAction="*")]
+        BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdResponse GetServiceBrandById(BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetServiceBrandById", ReplyAction="*")]
+        System.Threading.Tasks.Task<BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdResponse> GetServiceBrandByIdAsync(BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetAllServiceCategoriesResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllServiceCategories", ReplyAction="*")]
+        BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesResponse GetAllServiceCategories(BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllServiceCategories", ReplyAction="*")]
+        System.Threading.Tasks.Task<BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesResponse> GetAllServiceCategoriesAsync(BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetServiceCategoryByIdResult from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetServiceCategoryById", ReplyAction="*")]
+        BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdResponse GetServiceCategoryById(BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetServiceCategoryById", ReplyAction="*")]
+        System.Threading.Tasks.Task<BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdResponse> GetServiceCategoryByIdAsync(BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -423,6 +603,264 @@ namespace BikeStoresForms.BikeStoresWebService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllServiceBrandsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllServiceBrands", Namespace="http://tempuri.org/", Order=0)]
+        public BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsRequestBody Body;
+        
+        public GetAllServiceBrandsRequest() {
+        }
+        
+        public GetAllServiceBrandsRequest(BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllServiceBrandsRequestBody {
+        
+        public GetAllServiceBrandsRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllServiceBrandsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllServiceBrandsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsResponseBody Body;
+        
+        public GetAllServiceBrandsResponse() {
+        }
+        
+        public GetAllServiceBrandsResponse(BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllServiceBrandsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BikeStoresForms.BikeStoresWebService.ServiceBrand[] GetAllServiceBrandsResult;
+        
+        public GetAllServiceBrandsResponseBody() {
+        }
+        
+        public GetAllServiceBrandsResponseBody(BikeStoresForms.BikeStoresWebService.ServiceBrand[] GetAllServiceBrandsResult) {
+            this.GetAllServiceBrandsResult = GetAllServiceBrandsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetServiceBrandByIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetServiceBrandById", Namespace="http://tempuri.org/", Order=0)]
+        public BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdRequestBody Body;
+        
+        public GetServiceBrandByIdRequest() {
+        }
+        
+        public GetServiceBrandByIdRequest(BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetServiceBrandByIdRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public GetServiceBrandByIdRequestBody() {
+        }
+        
+        public GetServiceBrandByIdRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetServiceBrandByIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetServiceBrandByIdResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdResponseBody Body;
+        
+        public GetServiceBrandByIdResponse() {
+        }
+        
+        public GetServiceBrandByIdResponse(BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetServiceBrandByIdResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BikeStoresForms.BikeStoresWebService.ServiceBrand GetServiceBrandByIdResult;
+        
+        public GetServiceBrandByIdResponseBody() {
+        }
+        
+        public GetServiceBrandByIdResponseBody(BikeStoresForms.BikeStoresWebService.ServiceBrand GetServiceBrandByIdResult) {
+            this.GetServiceBrandByIdResult = GetServiceBrandByIdResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllServiceCategoriesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllServiceCategories", Namespace="http://tempuri.org/", Order=0)]
+        public BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesRequestBody Body;
+        
+        public GetAllServiceCategoriesRequest() {
+        }
+        
+        public GetAllServiceCategoriesRequest(BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllServiceCategoriesRequestBody {
+        
+        public GetAllServiceCategoriesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllServiceCategoriesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllServiceCategoriesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesResponseBody Body;
+        
+        public GetAllServiceCategoriesResponse() {
+        }
+        
+        public GetAllServiceCategoriesResponse(BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllServiceCategoriesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BikeStoresForms.BikeStoresWebService.ServiceCategory[] GetAllServiceCategoriesResult;
+        
+        public GetAllServiceCategoriesResponseBody() {
+        }
+        
+        public GetAllServiceCategoriesResponseBody(BikeStoresForms.BikeStoresWebService.ServiceCategory[] GetAllServiceCategoriesResult) {
+            this.GetAllServiceCategoriesResult = GetAllServiceCategoriesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetServiceCategoryByIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetServiceCategoryById", Namespace="http://tempuri.org/", Order=0)]
+        public BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdRequestBody Body;
+        
+        public GetServiceCategoryByIdRequest() {
+        }
+        
+        public GetServiceCategoryByIdRequest(BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetServiceCategoryByIdRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public GetServiceCategoryByIdRequestBody() {
+        }
+        
+        public GetServiceCategoryByIdRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetServiceCategoryByIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetServiceCategoryByIdResponse", Namespace="http://tempuri.org/", Order=0)]
+        public BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdResponseBody Body;
+        
+        public GetServiceCategoryByIdResponse() {
+        }
+        
+        public GetServiceCategoryByIdResponse(BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetServiceCategoryByIdResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public BikeStoresForms.BikeStoresWebService.ServiceCategory GetServiceCategoryByIdResult;
+        
+        public GetServiceCategoryByIdResponseBody() {
+        }
+        
+        public GetServiceCategoryByIdResponseBody(BikeStoresForms.BikeStoresWebService.ServiceCategory GetServiceCategoryByIdResult) {
+            this.GetServiceCategoryByIdResult = GetServiceCategoryByIdResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface BikeStoresWebServiceSoapChannel : BikeStoresForms.BikeStoresWebService.BikeStoresWebServiceSoap, System.ServiceModel.IClientChannel {
     }
@@ -552,6 +990,102 @@ namespace BikeStoresForms.BikeStoresWebService {
         
         public System.Threading.Tasks.Task DeleteAsync(int id) {
             return base.Channel.DeleteAsync(id);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsResponse BikeStoresForms.BikeStoresWebService.BikeStoresWebServiceSoap.GetAllServiceBrands(BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsRequest request) {
+            return base.Channel.GetAllServiceBrands(request);
+        }
+        
+        public BikeStoresForms.BikeStoresWebService.ServiceBrand[] GetAllServiceBrands() {
+            BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsRequest inValue = new BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsRequest();
+            inValue.Body = new BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsRequestBody();
+            BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsResponse retVal = ((BikeStoresForms.BikeStoresWebService.BikeStoresWebServiceSoap)(this)).GetAllServiceBrands(inValue);
+            return retVal.Body.GetAllServiceBrandsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsResponse> BikeStoresForms.BikeStoresWebService.BikeStoresWebServiceSoap.GetAllServiceBrandsAsync(BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsRequest request) {
+            return base.Channel.GetAllServiceBrandsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsResponse> GetAllServiceBrandsAsync() {
+            BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsRequest inValue = new BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsRequest();
+            inValue.Body = new BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsRequestBody();
+            return ((BikeStoresForms.BikeStoresWebService.BikeStoresWebServiceSoap)(this)).GetAllServiceBrandsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdResponse BikeStoresForms.BikeStoresWebService.BikeStoresWebServiceSoap.GetServiceBrandById(BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdRequest request) {
+            return base.Channel.GetServiceBrandById(request);
+        }
+        
+        public BikeStoresForms.BikeStoresWebService.ServiceBrand GetServiceBrandById(int id) {
+            BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdRequest inValue = new BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdRequest();
+            inValue.Body = new BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdRequestBody();
+            inValue.Body.id = id;
+            BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdResponse retVal = ((BikeStoresForms.BikeStoresWebService.BikeStoresWebServiceSoap)(this)).GetServiceBrandById(inValue);
+            return retVal.Body.GetServiceBrandByIdResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdResponse> BikeStoresForms.BikeStoresWebService.BikeStoresWebServiceSoap.GetServiceBrandByIdAsync(BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdRequest request) {
+            return base.Channel.GetServiceBrandByIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdResponse> GetServiceBrandByIdAsync(int id) {
+            BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdRequest inValue = new BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdRequest();
+            inValue.Body = new BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdRequestBody();
+            inValue.Body.id = id;
+            return ((BikeStoresForms.BikeStoresWebService.BikeStoresWebServiceSoap)(this)).GetServiceBrandByIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesResponse BikeStoresForms.BikeStoresWebService.BikeStoresWebServiceSoap.GetAllServiceCategories(BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesRequest request) {
+            return base.Channel.GetAllServiceCategories(request);
+        }
+        
+        public BikeStoresForms.BikeStoresWebService.ServiceCategory[] GetAllServiceCategories() {
+            BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesRequest inValue = new BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesRequest();
+            inValue.Body = new BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesRequestBody();
+            BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesResponse retVal = ((BikeStoresForms.BikeStoresWebService.BikeStoresWebServiceSoap)(this)).GetAllServiceCategories(inValue);
+            return retVal.Body.GetAllServiceCategoriesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesResponse> BikeStoresForms.BikeStoresWebService.BikeStoresWebServiceSoap.GetAllServiceCategoriesAsync(BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesRequest request) {
+            return base.Channel.GetAllServiceCategoriesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesResponse> GetAllServiceCategoriesAsync() {
+            BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesRequest inValue = new BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesRequest();
+            inValue.Body = new BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesRequestBody();
+            return ((BikeStoresForms.BikeStoresWebService.BikeStoresWebServiceSoap)(this)).GetAllServiceCategoriesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdResponse BikeStoresForms.BikeStoresWebService.BikeStoresWebServiceSoap.GetServiceCategoryById(BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdRequest request) {
+            return base.Channel.GetServiceCategoryById(request);
+        }
+        
+        public BikeStoresForms.BikeStoresWebService.ServiceCategory GetServiceCategoryById(int id) {
+            BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdRequest inValue = new BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdRequest();
+            inValue.Body = new BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdRequestBody();
+            inValue.Body.id = id;
+            BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdResponse retVal = ((BikeStoresForms.BikeStoresWebService.BikeStoresWebServiceSoap)(this)).GetServiceCategoryById(inValue);
+            return retVal.Body.GetServiceCategoryByIdResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdResponse> BikeStoresForms.BikeStoresWebService.BikeStoresWebServiceSoap.GetServiceCategoryByIdAsync(BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdRequest request) {
+            return base.Channel.GetServiceCategoryByIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdResponse> GetServiceCategoryByIdAsync(int id) {
+            BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdRequest inValue = new BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdRequest();
+            inValue.Body = new BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdRequestBody();
+            inValue.Body.id = id;
+            return ((BikeStoresForms.BikeStoresWebService.BikeStoresWebServiceSoap)(this)).GetServiceCategoryByIdAsync(inValue);
         }
     }
 }

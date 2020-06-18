@@ -97,14 +97,18 @@
     <Compile Include="ServiceModels\ServiceCategory.cs" />
     <Compile Include="ServiceModels\ServiceProduct.cs" />
     <Compile Include="Services\BrandDataService.cs" />
+    <Compile Include="Services\BrandModelServiceModelConverter.cs" />
     <Compile Include="Services\CategoryDataService.cs" />
+    <Compile Include="Services\CategoryModelServiceModelConverter.cs" />
     <Compile Include="Services\GetService.cs" />
     <Compile Include="Services\ProductModelServiceModelConverter.cs" />
+    <Compile Include="Services\ServiceProductoViewModelConverter.cs" />
     <Compile Include="Services\ServicesContracts\IDataService.cs" />
     <Compile Include="Services\ServicesContracts\IModelViewModelConverter.cs" />
     <Compile Include="Services\ProductModelViewModelConverterService.cs" />
     <Compile Include="Services\ServicesContracts\IServiceModelConverter.cs" />
     <Compile Include="Services\ProductsDataService.cs" />
+    <Compile Include="ServiceViewModels\ServiceProductViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

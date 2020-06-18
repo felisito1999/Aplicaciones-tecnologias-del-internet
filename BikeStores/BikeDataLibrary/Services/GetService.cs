@@ -29,5 +29,17 @@ namespace BikeDataLibrary.Services
         {
             return new ProductModelServiceModelConverter(); 
         }
+        public static BrandModelServiceModelConverter GetBrandModelServiceModelConverter()
+        {
+            return new BrandModelServiceModelConverter();
+        }
+        public static CategoryModelServiceModelConverter GetCategoryModelServiceModelConverter()
+        {
+            return new CategoryModelServiceModelConverter();
+        }
+        public static ServiceProductoViewModelConverter GetServiceProductoViewModelConverter()
+        {
+            return new ServiceProductoViewModelConverter();
+        }
     }
 }

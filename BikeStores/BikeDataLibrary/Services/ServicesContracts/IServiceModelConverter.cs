@@ -15,6 +15,6 @@ namespace BikeDataLibrary.Services.ServicesContracts
         T ConvertModelToServiceModel(T1 model);
         T1 ConvertServiceModelToModel(T serviceModel);
         List<T> ConvertModelCollectionToServiceModelCollection(List<T1> modelCollection);
-        List<T1> ConvertServiceModelCollecitonToModelCollection(List<T> serviceModelCollection);
+        List<T1> ConvertServiceModelCollectionToModelCollection(List<T> serviceModelCollection);
     }
 }

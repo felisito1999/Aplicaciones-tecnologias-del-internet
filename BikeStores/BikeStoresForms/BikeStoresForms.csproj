@@ -84,13 +84,31 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Connected Services\BikeStoresWebService\BikeStoresForms.BikeStoresWebService.GetAllServiceBrandsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BikeStoresWebService\BikeStoresForms.BikeStoresWebService.GetAllServiceCategoriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\BikeStoresWebService\BikeStoresForms.BikeStoresWebService.GetAllServiceProductsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\BikeStoresWebService\BikeStoresForms.BikeStoresWebService.GetByIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\BikeStoresWebService\BikeStoresForms.BikeStoresWebService.GetServiceBrandByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BikeStoresWebService\BikeStoresForms.BikeStoresWebService.GetServiceCategoryByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\BikeStoresWebService\BikeStoresForms.BikeStoresWebService.InsertResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BikeStoresWebService\BikeStoresForms.BikeStoresWebService.ServiceBrand.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BikeStoresWebService\BikeStoresForms.BikeStoresWebService.ServiceCategory.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\BikeStoresWebService\BikeStoresForms.BikeStoresWebService.ServiceProduct.datasource">
@@ -133,6 +151,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BikeDataLibrary\BikeStoresDataLibrary.csproj">
+      <Project>{4e2ecf27-6dd7-45b5-bf4a-c7f1e7da8ce5}</Project>
+      <Name>BikeStoresDataLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

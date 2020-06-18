@@ -9,3 +9,9 @@ C:\Aplicaciones tecnologias del internet\BikeStores\BikeStoresForms\obj\Debug\Bi
 C:\Aplicaciones tecnologias del internet\BikeStores\BikeStoresForms\obj\Debug\BikeStoresForms.csproj.CoreCompileInputs.cache
 C:\Aplicaciones tecnologias del internet\BikeStores\BikeStoresForms\obj\Debug\BikeStoresForms.exe
 C:\Aplicaciones tecnologias del internet\BikeStores\BikeStoresForms\obj\Debug\BikeStoresForms.pdb
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeStoresForms\bin\Debug\BikeDataLibrary.dll
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeStoresForms\bin\Debug\EntityFramework.dll
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeStoresForms\bin\Debug\BikeDataLibrary.pdb
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeStoresForms\bin\Debug\BikeDataLibrary.dll.config
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeStoresForms\bin\Debug\EntityFramework.xml
+C:\Aplicaciones tecnologias del internet\BikeStores\BikeStoresForms\obj\Debug\BikeStoresForms.csproj.CopyComplete

@@ -24,7 +24,9 @@
           <s:element minOccurs="1" maxOccurs="1" name="ModelYear" type="s:short" />
           <s:element minOccurs="1" maxOccurs="1" name="ListPrice" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="BrandId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BrandName" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="CategoryId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryName" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="GetById">
@@ -71,6 +73,76 @@
       <s:element name="DeleteResponse">
         <s:complexType />
       </s:element>
+      <s:element name="GetAllServiceBrands">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllServiceBrandsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllServiceBrandsResult" type="tns:ArrayOfServiceBrand" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfServiceBrand">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ServiceBrand" nillable="true" type="tns:ServiceBrand" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceBrand">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BrandId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BrandName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetServiceBrandById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceBrandByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceBrandByIdResult" type="tns:ServiceBrand" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllServiceCategories">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllServiceCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllServiceCategoriesResult" type="tns:ArrayOfServiceCategory" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfServiceCategory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ServiceCategory" nillable="true" type="tns:ServiceCategory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceCategory">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetServiceCategoryById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceCategoryByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceCategoryByIdResult" type="tns:ServiceCategory" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="GetAllServiceProductsSoapIn">
@@ -103,6 +175,30 @@
   <wsdl:message name="DeleteSoapOut">
     <wsdl:part name="parameters" element="tns:DeleteResponse" />
   </wsdl:message>
+  <wsdl:message name="GetAllServiceBrandsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllServiceBrands" />
+  </wsdl:message>
+  <wsdl:message name="GetAllServiceBrandsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllServiceBrandsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceBrandByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceBrandById" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceBrandByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceBrandByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllServiceCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllServiceCategories" />
+  </wsdl:message>
+  <wsdl:message name="GetAllServiceCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllServiceCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceCategoryByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceCategoryById" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceCategoryByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceCategoryByIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="BikeStoresWebServiceSoap">
     <wsdl:operation name="GetAllServiceProducts">
       <wsdl:input message="tns:GetAllServiceProductsSoapIn" />
@@ -123,6 +219,22 @@
     <wsdl:operation name="Delete">
       <wsdl:input message="tns:DeleteSoapIn" />
       <wsdl:output message="tns:DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServiceBrands">
+      <wsdl:input message="tns:GetAllServiceBrandsSoapIn" />
+      <wsdl:output message="tns:GetAllServiceBrandsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceBrandById">
+      <wsdl:input message="tns:GetServiceBrandByIdSoapIn" />
+      <wsdl:output message="tns:GetServiceBrandByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServiceCategories">
+      <wsdl:input message="tns:GetAllServiceCategoriesSoapIn" />
+      <wsdl:output message="tns:GetAllServiceCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCategoryById">
+      <wsdl:input message="tns:GetServiceCategoryByIdSoapIn" />
+      <wsdl:output message="tns:GetServiceCategoryByIdSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BikeStoresWebServiceSoap" type="tns:BikeStoresWebServiceSoap">
@@ -172,6 +284,42 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetAllServiceBrands">
+      <soap:operation soapAction="http://tempuri.org/GetAllServiceBrands" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceBrandById">
+      <soap:operation soapAction="http://tempuri.org/GetServiceBrandById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServiceCategories">
+      <soap:operation soapAction="http://tempuri.org/GetAllServiceCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCategoryById">
+      <soap:operation soapAction="http://tempuri.org/GetServiceCategoryById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BikeStoresWebServiceSoap12" type="tns:BikeStoresWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -213,6 +361,42 @@
     </wsdl:operation>
     <wsdl:operation name="Delete">
       <soap12:operation soapAction="http://tempuri.org/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServiceBrands">
+      <soap12:operation soapAction="http://tempuri.org/GetAllServiceBrands" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceBrandById">
+      <soap12:operation soapAction="http://tempuri.org/GetServiceBrandById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServiceCategories">
+      <soap12:operation soapAction="http://tempuri.org/GetAllServiceCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCategoryById">
+      <soap12:operation soapAction="http://tempuri.org/GetServiceCategoryById" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

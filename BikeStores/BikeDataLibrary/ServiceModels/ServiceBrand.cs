@@ -9,6 +9,6 @@ namespace BikeDataLibrary.ServiceModels
     public class ServiceBrand
     {
         public int BrandId { get; set; }
-        public int BrandName { get; set; }
+        public string BrandName { get; set; }
     }
 }

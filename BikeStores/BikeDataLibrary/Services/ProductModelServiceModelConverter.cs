@@ -25,14 +25,19 @@ namespace BikeDataLibrary.Services
 
         public ServiceProduct ConvertModelToServiceModel(product product)
         {
+            var brand = GetService.GetBrandDataService().GetById(product.brand_id);
+            var category = GetService.GetCategoryDataService().GetById(product.category_id);
+
             ServiceProduct serviceProduct = new ServiceProduct
             {
                 ProductId = product.product_id,
                 ProductName = product.product_name,
                 ModelYear = product.model_year,
                 ListPrice = product.list_price,
-                BrandId = product.brand_id,
-                CategoryId = product.category_id
+                BrandId = brand.brand_id,
+                BrandName = brand.brand_name,
+                CategoryId = category.category_id,
+                CategoryName = category.category_name
             };
             return serviceProduct; 
         }
@@ -51,7 +56,7 @@ namespace BikeDataLibrary.Services
             return product; 
         }
 
-        public List<product> ConvertServiceModelCollecitonToModelCollection(List<ServiceProduct> serviceProductCollection)
+        public List<product> ConvertServiceModelCollectionToModelCollection(List<ServiceProduct> serviceProductCollection)
         {
             List<product> products = new List<product>();
 

@@ -10,7 +10,7 @@ namespace BikeStoresForms.Services
 {
     public static class WebServiceFactory
     {
-        public static BikeStoresWebServiceSoapClient GetBikeStoresWebService()
+        public static BikeStoresWebServiceSoapClient GetBikeStoresClient()
         {
             return new BikeStoresWebServiceSoapClient();
         }

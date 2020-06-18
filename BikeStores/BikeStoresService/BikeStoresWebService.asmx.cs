@@ -24,35 +24,67 @@ namespace BikeStoresService
         [WebMethod]
         public List<ServiceProduct> GetAllServiceProducts()
         {
-            var productModel = BikeDataLibrary.Services.GetService.GetProductService().GetAll().ToList();
-            var serviceProduct = BikeDataLibrary.Services.GetService.GetProductModelServiceModelConverter().ConvertModelCollectionToServiceModelCollection(productModel);
+            var product = BikeDataLibrary.Services.GetService.GetProductService().GetAll().ToList();
+            var serviceProducts = BikeDataLibrary.Services.GetService.GetProductModelServiceModelConverter().ConvertModelCollectionToServiceModelCollection(product);
 
-            return serviceProduct; 
+            return serviceProducts; 
         }
         [WebMethod]
         public ServiceProduct GetById(int id)
         {
-            var productModel = BikeDataLibrary.Services.GetService.GetProductService().GetById(id);
-            var serviceProduct = BikeDataLibrary.Services.GetService.GetProductModelServiceModelConverter().ConvertModelToServiceModel(productModel);
+            var product = BikeDataLibrary.Services.GetService.GetProductService().GetById(id);
+            var serviceProduct = BikeDataLibrary.Services.GetService.GetProductModelServiceModelConverter().ConvertModelToServiceModel(product);
 
             return serviceProduct; 
         }
         [WebMethod]
         public void Insert(ServiceProduct serviceProduct)
         {
-            var productModel = BikeDataLibrary.Services.GetService.GetProductModelServiceModelConverter().ConvertServiceModelToModel(serviceProduct);
-            BikeDataLibrary.Services.GetService.GetProductService().Insert(productModel);
+            var product = BikeDataLibrary.Services.GetService.GetProductModelServiceModelConverter().ConvertServiceModelToModel(serviceProduct);
+            BikeDataLibrary.Services.GetService.GetProductService().Insert(product);
         }
         [WebMethod]
         public void Update(ServiceProduct serviceProduct)
         {
-            var productModel = BikeDataLibrary.Services.GetService.GetProductModelServiceModelConverter().ConvertServiceModelToModel(serviceProduct);
-            BikeDataLibrary.Services.GetService.GetProductService().Update(productModel);
+            var product = BikeDataLibrary.Services.GetService.GetProductModelServiceModelConverter().ConvertServiceModelToModel(serviceProduct);
+            BikeDataLibrary.Services.GetService.GetProductService().Update(product);
         }
         [WebMethod]
         public void Delete(int id)
         {
             BikeDataLibrary.Services.GetService.GetProductService().Delete(id);
+        }
+        [WebMethod]
+        public List<ServiceBrand> GetAllServiceBrands()
+        {
+            var brands = BikeDataLibrary.Services.GetService.GetBrandDataService().GetAll().ToList();
+            var serviceBrands = BikeDataLibrary.Services.GetService.GetBrandModelServiceModelConverter().ConvertModelCollectionToServiceModelCollection(brands);
+
+            return serviceBrands;
+        }
+        [WebMethod]
+        public ServiceBrand GetServiceBrandById(int id)
+        {
+            var brand = BikeDataLibrary.Services.GetService.GetBrandDataService().GetById(id);
+            var serviceBrand = BikeDataLibrary.Services.GetService.GetBrandModelServiceModelConverter().ConvertModelToServiceModel(brand);
+
+            return serviceBrand;
+        }
+        [WebMethod]
+        public List<ServiceCategory> GetAllServiceCategories()
+        {
+            var categories = BikeDataLibrary.Services.GetService.GetCategoryDataService().GetAll().ToList();
+            var serviceCategories = BikeDataLibrary.Services.GetService.GetCategoryModelServiceModelConverter().ConvertModelCollectionToServiceModelCollection(categories);
+
+            return serviceCategories;
+        }
+        [WebMethod]
+        public ServiceCategory GetServiceCategoryById(int id)
+        {
+            var category = BikeDataLibrary.Services.GetService.GetCategoryDataService().GetById(id);
+            var serviceCategory = BikeDataLibrary.Services.GetService.GetCategoryModelServiceModelConverter().ConvertModelToServiceModel(category);
+
+            return serviceCategory;
         }
         //[WebMethod]
         //public List<ProductViewModel> GetAllProducts()
