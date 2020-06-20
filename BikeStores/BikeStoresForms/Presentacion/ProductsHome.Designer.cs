@@ -42,6 +42,7 @@
             this.Lbl_Categories = new System.Windows.Forms.Label();
             this.CbBrands = new System.Windows.Forms.ComboBox();
             this.CbCategories = new System.Windows.Forms.ComboBox();
+            this.LblMode = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DtgProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,14 +50,17 @@
             // 
             this.DtgProducts.AllowUserToAddRows = false;
             this.DtgProducts.AllowUserToDeleteRows = false;
+            this.DtgProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DtgProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtgProducts.Location = new System.Drawing.Point(12, 592);
             this.DtgProducts.Name = "DtgProducts";
             this.DtgProducts.ReadOnly = true;
             this.DtgProducts.RowHeadersWidth = 82;
             this.DtgProducts.RowTemplate.Height = 33;
+            this.DtgProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DtgProducts.Size = new System.Drawing.Size(1842, 828);
             this.DtgProducts.TabIndex = 0;
+            this.DtgProducts.SelectionChanged += new System.EventHandler(this.DtgProducts_SelectionChanged);
             // 
             // TxtProductName
             // 
@@ -91,6 +95,7 @@
             this.BtnSave.TabIndex = 5;
             this.BtnSave.Text = "Save";
             this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // BtnDelete
             // 
@@ -101,6 +106,7 @@
             this.BtnDelete.TabIndex = 6;
             this.BtnDelete.Text = "Delete";
             this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // BtnUnselect
             // 
@@ -111,6 +117,7 @@
             this.BtnUnselect.TabIndex = 7;
             this.BtnUnselect.Text = "Unselect ";
             this.BtnUnselect.UseVisualStyleBackColor = true;
+            this.BtnUnselect.Click += new System.EventHandler(this.BtnUnselect_Click);
             // 
             // Lbl_ProductName
             // 
@@ -180,6 +187,15 @@
             this.CbCategories.Size = new System.Drawing.Size(628, 58);
             this.CbCategories.TabIndex = 14;
             // 
+            // LblMode
+            // 
+            this.LblMode.AutoSize = true;
+            this.LblMode.Font = new System.Drawing.Font("Segoe UI Semibold", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMode.Location = new System.Drawing.Point(1321, 48);
+            this.LblMode.Name = "LblMode";
+            this.LblMode.Size = new System.Drawing.Size(0, 50);
+            this.LblMode.TabIndex = 15;
+            // 
             // ProductsHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
@@ -187,6 +203,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1866, 1432);
+            this.Controls.Add(this.LblMode);
             this.Controls.Add(this.CbCategories);
             this.Controls.Add(this.CbBrands);
             this.Controls.Add(this.Lbl_Categories);
@@ -227,5 +244,6 @@
         private System.Windows.Forms.Label Lbl_Categories;
         private System.Windows.Forms.ComboBox CbBrands;
         private System.Windows.Forms.ComboBox CbCategories;
+        private System.Windows.Forms.Label LblMode;
     }
 }

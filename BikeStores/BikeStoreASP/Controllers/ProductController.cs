@@ -12,7 +12,7 @@ namespace BikeStoreASP.Controllers
 {
     public class ProductController : Controller
     {
-        // GET: Product
+
         public ActionResult AllProducts()
         {
             var product = GetService.GetProductService().GetAll();
