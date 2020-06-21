@@ -6,15 +6,13 @@ using System.Net.Http;
 using System.Web.Http;
 using BikeDataLibrary.Services;
 using BikeDataLibrary.ServiceModels;
-using BikeDataLibrary.ViewModels;
-using BikeDataLibrary.BikeStoresData;
-using System.Data.Entity;
-using BikeDataLibrary.ServiceViewModels;
+
 
 namespace BikeStoresApi.Controllers
 {
     public class ProductController : ApiController
     {
+        [HttpGet]
         public IEnumerable<ServiceProduct> GetAllProduct()
         {
             var products = GetService.GetProductService().GetAll().ToList();
@@ -22,6 +20,7 @@ namespace BikeStoresApi.Controllers
 
             return serviceProducts;
         }
+        [HttpGet]
         public ServiceProduct GetProductById(int id)
         {
             var product = GetService.GetProductService().GetById(id);
@@ -35,10 +34,16 @@ namespace BikeStoresApi.Controllers
             var product = GetService.GetProductModelServiceModelConverter().ConvertServiceModelToModel(serviceProduct);
             GetService.GetProductService().Insert(product);
         }
+        [HttpPut]
         public void UpdateProduct(int id, ServiceProduct serviceProduct)
         {
             var product = GetService.GetProductService().GetById(id);
             
+        }
+        [HttpDelete]
+        public void deleteProduct(int id)
+        {
+            GetService.GetProductService().Delete(id);
         }
         //public IHttpActionResult PutUpdate(ProductViewModel productViewModel)
         //{
